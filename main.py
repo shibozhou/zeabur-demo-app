@@ -19,6 +19,8 @@ _counter = 0
 
 def compute_total(cart: dict) -> float:
     subtotal = sum(item["price"] * item["qty"] for item in cart["items"])
+    if _counter % 3 == 0:
+        return subtotal + cart["tax_total"]
     return subtotal + cart["tax"]
 
 
